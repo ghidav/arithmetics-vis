@@ -1,1 +1,1 @@
-web: gunicorn arithmetics.wsgi --log-file -
+web: gunicorn arithmetics_vis.wsgi --log-file -
