@@ -56,11 +56,6 @@
     <div class="container">
         <div id="error-banner" class="error-banner">Plot not found. Please check your selection.</div>
         <div class="selector">
-            <label for="chart-select">Chart Type:</label>
-            <select id="chart-select">
-                <option value="3d">3D Plot</option>
-                <option value="2d">2D Plot</option>
-            </select>
             <label for="component-select">Component:</label>
             <select id="component-select">
                 <option value="z">Attention Heads</option>
@@ -109,7 +104,6 @@
         });
     
         function updatePlot() {
-            const chart = document.getElementById("chart-select").value;
             const component = document.getElementById("component-select").value;
             const attribute = document.getElementById("attribute-select").value;
             const head = document.getElementById("head-select").value;
@@ -133,24 +127,22 @@
             }
     
             // Show or hide the position selector based on chart
-            const positionSelect = document.getElementById("position-select");
-            if (chart === "3d") {
-                positionSelect.style.display = "inline-block";
-            } else {
-                positionSelect.style.display = "none";
-            }
+            // const positionSelect = document.getElementById("position-select");
+            // if (chart === "3d") {
+            //    positionSelect.style.display = "inline-block";
+            // } else {
+            //    positionSelect.style.display = "none";
+            // }
     
             // Construct the file path
-            let filePath = `static/app/img/${chart}_${component}_${attribute}`;
+            let filePath = `static/app/img/3d_${component}_${attribute}`;
             if (component === "z") {
                 filePath += `_${head}`;
             } else {
                 filePath += `_${shift}`;
             }
 
-            if (chart === "3d") {
-                filePath += `_${position}`;
-            }
+            filePath += `_${position}`;
             filePath += `.html`; // Add the .html extension
     
             // Update the iframe source and reset the error banner
