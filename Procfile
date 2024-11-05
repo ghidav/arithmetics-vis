@@ -1,0 +1,1 @@
+web: gunicorn arithmetics.wsgi --log-file -

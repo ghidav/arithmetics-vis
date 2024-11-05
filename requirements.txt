@@ -1,0 +1,4 @@
+Django==4.2.3  # or your specific version
+gunicorn==20.1.0
+django-heroku==0.3.1
+psycopg2-binary==2.9.6  # if using PostgreSQL, Heroku's default database
